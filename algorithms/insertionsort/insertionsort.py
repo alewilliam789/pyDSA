@@ -1,13 +1,15 @@
 def insertionsort(array):
 
 
-    for element in range(len(array)-1):
+    for i,x in enumerate(array):
+        j = i-1
+        while(j >=0):
+            current_value = array[j+1]
+            if(array[j] > current_value):
+                array[j+1] = array[j]
+                array[j] = current_value
+            j -= 1
 
-        for i,x in enumerate(array):
-            if(i > 0):
-                if(array[i-1] > x):
-                    array[i] = array[i-1]
-                    array[i-1] = x
 
 
     return array
